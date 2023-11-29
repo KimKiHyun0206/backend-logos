@@ -1,6 +1,6 @@
 ---
 title: Introduce
-author: 김기현
+author: KimKiHyun
 date: 2023-11-29 20:10:00 +0800
 categories: [Blogging, Introduce]
 tags: [introduce]

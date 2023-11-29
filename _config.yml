@@ -154,7 +154,7 @@ defaults:
       layout: page
       permalink: /:title/
   - scope:
-      path: assets/img/book
+      path: assets/img/favicons/book
     values:
       swcache: true
   - scope:

@@ -1,6 +1,6 @@
 ---
 title: Spring Framework
-date: 2023-11-29 20:10:00 +0800
+date: 2023-11-29 20:20:00 +0800
 categories: [Spring, Concept]
 tags: [concept][spring-framework]
 render_with_liquid: false

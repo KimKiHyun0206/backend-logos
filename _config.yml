@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 
 title: 백앤드 이야기 # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the sub-title
+tagline: 백앤드 개발자를 목표로 공부하는 대학생의 블로그 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
@@ -154,7 +154,7 @@ defaults:
       layout: page
       permalink: /:title/
   - scope:
-      path: assets/img/favicons
+      path: assets/img/book
     values:
       swcache: true
   - scope:

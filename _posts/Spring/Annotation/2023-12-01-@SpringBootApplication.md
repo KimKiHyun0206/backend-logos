@@ -6,7 +6,7 @@ tags: [code]
 render_with_liquid: false
 ---
 
-
+# @SpringBootApplication
 
 ```java
 /*

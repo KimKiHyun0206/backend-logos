@@ -1,5 +1,5 @@
 ---
-title: Spring Framework
+title: SpringFramework
 date: 2023-11-30 20:20:00 +0800
 categories: [Spring, Concept]
 tags: [concept][spring]

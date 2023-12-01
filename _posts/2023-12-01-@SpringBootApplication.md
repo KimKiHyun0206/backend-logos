@@ -1,11 +1,11 @@
 ---
-title: @SpringBootApplication
-date: '2023-12-01 20:00:00 +0800'
-description : 'Spring 애노테이션 코드 분석'
-categories: [Spring, Code]
-tags: [코드분석, Springboot]
+title: Introduce
+date: 2023-11-30 20:10:00 +0800
+categories: [Blogging, Introduce]
+tags: [introduce]
 render_with_liquid: false
 ---
+
 
 
 ```java
@@ -161,3 +161,24 @@ public @interface SpringBootApplication {
 
 }
 ```
+
+<br>
+
+## 메타 애노테이션
+```java
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Inherited
+@SpringBootConfiguration
+@EnableAutoConfiguration
+@ComponentScan(excludeFilters = { @Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),
+@Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class) })
+```
+
+| 애노테이션 | 설명|
+|:------|:----|
+|  @Target     |   |
+|   @Retention    |   |
+|    @Documented   |   |
+|       |   |

@@ -175,9 +175,12 @@ public @interface SpringBootApplication {
   @Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class)})
 ```
 
-| 애노테이션 | 설명   |
-|:------|:-----|
-|  @Target     | Elee |
-|   @Retention    |      |
-|    @Documented   |      |
-|       |      |
+| 애노테이션                    | 설명                                                |
+|:-------------------------|:--------------------------------------------------|
+| @Target                  | 타입에만 붙일 수 있는 애노테이션이다                              |
+| @Retention               | 런타임 동안에는 계속 참조 가능하다                               |
+| @Inherited               | 자식 클래스에게 애노테이션이 상속되도록 한다                          |
+| @SpringBootConfiguration | 환경 설정 빈 구성을 자동으로 찾을 수 있게 해준다                      |
+| @EnableAutoConfiguration | @CompnentScan으로 빈이 등록된 이후, 추가적인 빈들을 읽어 등록하는 애노테이션 |
+| @ComponentScan           | 스프링 빈으로 등록될 것임을 알려준다                              |
+| @Filter                        |                                                   |

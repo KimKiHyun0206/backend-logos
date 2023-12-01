@@ -111,3 +111,38 @@ public @interface Retention {
 
 * Default는 CLASS이다
 * 셋 중 하나만 선택할 수 있다
+
+
+<br>
+
+## @Inherited
+> Annotation이 자식 클래스에도 상속되도록 한다
+
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.ANNOTATION_TYPE)
+public @interface Inherited {
+}
+```
+
+
+<br>
+
+## Repeatable
+> 보통 하나의 대상에 한 종류의 Annotation만 적용하지만. 여러번 적용할 수 있게 한다
+
+```java
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.ANNOTATION_TYPE)
+public @interface Repeatable {
+    /**
+     * Indicates the <em>containing annotation type</em> for the
+     * repeatable annotation type.
+     * @return the containing annotation type
+     */
+    Class<? extends Annotation> value();
+}
+```
+

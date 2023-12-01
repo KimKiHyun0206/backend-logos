@@ -2,7 +2,7 @@
 title: Spring Framework
 date: 2023-11-30 20:20:00 +0800
 categories: [Spring, Concept]
-tags: [concept][spring-framework]
+tags: [concept][spring]
 render_with_liquid: false
 ---
 

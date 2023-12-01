@@ -1,6 +1,6 @@
 ---
 title: @SpringBootApplication
-date: 2023-11-30 20:10:00 +0800
+date: 2023-11-30 +0800
 categories: [Spring, Annotation]
 tags: [code]
 render_with_liquid: false

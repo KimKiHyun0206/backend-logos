@@ -1,13 +1,10 @@
 ---
 title: @SpringBootApplication
-date: 2023-11-30 +0800
+date: 2023-11-29 20:10:00 +0800
 categories: [Spring, Annotation]
-tags: [code]
+tags: [spring]
 render_with_liquid: false
 ---
-
-# @SpringBootApplication
-
 ```java
 /*
  * Copyright 2012-2020 the original author or authors.

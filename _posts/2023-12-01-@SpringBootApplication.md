@@ -1,6 +1,7 @@
 ---
 title: @SpringBootApplication
-date: 2023-12-01 20:00:00 +0800
+date: '2023-12-01 20:00:00 +0800'
+description : 'Spring 애노테이션 코드 분석'
 categories: [Spring, Code]
 tags: [코드분석, Springboot]
 render_with_liquid: false

@@ -1,9 +1,8 @@
 ---
-title: @Entity
-date: 2023-11-30 +0800
-categories: [Spring, Annotation]
-tags: [code]
+title: Entity
+date: 2023-11-29 20:10:00 +0800
+categories: [Blogging, Introduce]
+tags: [spring]
 render_with_liquid: false
 ---
-
 # Entity

@@ -1,8 +1,8 @@
 ---
-title: Introduce
+title: @SpringBootApplication
 date: 2023-11-30 20:10:00 +0800
-categories: [Blogging, Introduce]
-tags: [introduce]
+categories: [Spring, Annotation]
+tags: [code]
 render_with_liquid: false
 ---
 

@@ -73,7 +73,7 @@ theme_mode: # [light|dark]
 img_cdn: "https://kimkihyun0206.github.io/backend-logos/"
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "assets/img/favicons/book.png"
+avatar: "assets/img/favicons/favicon.ico"
 
 # boolean type, the global switch for TOC in posts.
 toc: true

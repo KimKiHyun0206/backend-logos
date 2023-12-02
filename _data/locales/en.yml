@@ -20,7 +20,7 @@ tabs:
 search:
   hint: search
   cancel: Cancel
-  no_results: Oops! No results found.
+  no_results: 검색 결과가 없습니다
 
 panel:
   lastmod: Recently Updated
@@ -35,7 +35,7 @@ copyright:
     link: https://creativecommons.org/licenses/by/4.0/
 
   # Displayed in the footer
-  brief: Some rights reserved.
+  brief: All rights reserved.
   verbose: >-
     Except where otherwise noted, the blog posts on this site are licensed
     under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.
@@ -43,7 +43,7 @@ copyright:
 meta: Using the :THEME theme for :PLATFORM.
 
 not_found:
-  statment: Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.
+  statment: 죄송합니다. 해당 URL이 잘못되었거나 존재하지 않는 항목을 가리키고 있습니다.
 
 notification:
   update_found: A new version of content is available.

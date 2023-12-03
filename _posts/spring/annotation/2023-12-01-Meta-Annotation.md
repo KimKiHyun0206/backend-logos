@@ -1,5 +1,5 @@
 ---
-title: 메타 애노테이션
+title: 메타 애노테이션(Meta-Annotation)
 date: 2023-12-01 20:10:00 +0800
 categories: [Spring, Annotation]
 tags: [java, annotation]

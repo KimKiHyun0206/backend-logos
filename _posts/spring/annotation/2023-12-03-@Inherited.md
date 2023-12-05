@@ -12,13 +12,13 @@ render_with_liquid: false
 
 이 애노테이션의 주석을 해석하면 다음과 같다
 
-```markdown
+```
 Indicates that an annotation interface is automatically inherited.  
-**If an Inherited meta-annotation is present on an annotation interface
+If an Inherited meta-annotation is present on an annotation interface
 declaration, and the user queries the annotation interface on a class
 declaration, and the class declaration has no annotation for this interface,
 then the class's superclass will automatically be queried for the
-annotation interface.**  This process will be repeated until an annotation for
+annotation interface.  This process will be repeated until an annotation for
 this interface is found, or the top of the class hierarchy (Object)
 is reached. If no superclass has an annotation for this interface, then
 the query will indicate that the class in question has no such annotation.

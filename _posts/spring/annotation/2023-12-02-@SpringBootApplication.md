@@ -7,56 +7,6 @@ render_with_liquid: false
 ---
 
 ```java
-/*
- * Copyright 2012-2020 the original author or authors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-package org.springframework.boot.autoconfigure;
-
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Inherited;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-import org.springframework.beans.factory.support.BeanNameGenerator;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.SpringBootConfiguration;
-import org.springframework.boot.context.TypeExcludeFilter;
-import org.springframework.context.annotation.AnnotationBeanNameGenerator;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScan.Filter;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
-import org.springframework.core.annotation.AliasFor;
-import org.springframework.data.repository.Repository;
-
-/**
- * Indicates a {@link Configuration configuration} class that declares one or more
- * {@link Bean @Bean} methods and also triggers {@link EnableAutoConfiguration
- * auto-configuration} and {@link ComponentScan component scanning}. This is a convenience
- * annotation that is equivalent to declaring {@code @Configuration},
- * {@code @EnableAutoConfiguration} and {@code @ComponentScan}.
- *
- * @author Phillip Webb
- * @author Stephane Nicoll
- * @author Andy Wilkinson
- * @since 1.2.0
- */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
@@ -67,93 +17,21 @@ import org.springframework.data.repository.Repository;
   @Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class)})
 public @interface SpringBootApplication {
 
-  /**
-   * Exclude specific auto-configuration classes such that they will never be applied.
-   * @return the classes to exclude
-   */
   @AliasFor(annotation = EnableAutoConfiguration.class)
   Class<?>[] exclude() default {};
 
-  /**
-   * Exclude specific auto-configuration class names such that they will never be
-   * applied.
-   * @return the class names to exclude
-   * @since 1.3.0
-   */
   @AliasFor(annotation = EnableAutoConfiguration.class)
   String[] excludeName() default {};
 
-  /**
-   * Base packages to scan for annotated components. Use {@link #scanBasePackageClasses}
-   * for a type-safe alternative to String-based package names.
-   * <p>
-   * <strong>Note:</strong> this setting is an alias for
-   * {@link ComponentScan @ComponentScan} only. It has no effect on {@code @Entity}
-   * scanning or Spring Data {@link Repository} scanning. For those you should add
-   * {@link org.springframework.boot.autoconfigure.domain.EntityScan @EntityScan} and
-   * {@code @Enable...Repositories} annotations.
-   * @return base packages to scan
-   * @since 1.3.0
-   */
   @AliasFor(annotation = ComponentScan.class, attribute = "basePackages")
   String[] scanBasePackages() default {};
-
-  /**
-   * Type-safe alternative to {@link #scanBasePackages} for specifying the packages to
-   * scan for annotated components. The package of each class specified will be scanned.
-   * <p>
-   * Consider creating a special no-op marker class or interface in each package that
-   * serves no purpose other than being referenced by this attribute.
-   * <p>
-   * <strong>Note:</strong> this setting is an alias for
-   * {@link ComponentScan @ComponentScan} only. It has no effect on {@code @Entity}
-   * scanning or Spring Data {@link Repository} scanning. For those you should add
-   * {@link org.springframework.boot.autoconfigure.domain.EntityScan @EntityScan} and
-   * {@code @Enable...Repositories} annotations.
-   * @return base packages to scan
-   * @since 1.3.0
-   */
+  
   @AliasFor(annotation = ComponentScan.class, attribute = "basePackageClasses")
   Class<?>[] scanBasePackageClasses() default {};
 
-  /**
-   * The {@link BeanNameGenerator} class to be used for naming detected components
-   * within the Spring container.
-   * <p>
-   * The default value of the {@link BeanNameGenerator} interface itself indicates that
-   * the scanner used to process this {@code @SpringBootApplication} annotation should
-   * use its inherited bean name generator, e.g. the default
-   * {@link AnnotationBeanNameGenerator} or any custom instance supplied to the
-   * application context at bootstrap time.
-   * @return {@link BeanNameGenerator} to use
-   * @see SpringApplication#setBeanNameGenerator(BeanNameGenerator)
-   * @since 2.3.0
-   */
   @AliasFor(annotation = ComponentScan.class, attribute = "nameGenerator")
   Class<? extends BeanNameGenerator> nameGenerator() default BeanNameGenerator.class;
-
-  /**
-   * Specify whether {@link Bean @Bean} methods should get proxied in order to enforce
-   * bean lifecycle behavior, e.g. to return shared singleton bean instances even in
-   * case of direct {@code @Bean} method calls in user code. This feature requires
-   * method interception, implemented through a runtime-generated CGLIB subclass which
-   * comes with limitations such as the configuration class and its methods not being
-   * allowed to declare {@code final}.
-   * <p>
-   * The default is {@code true}, allowing for 'inter-bean references' within the
-   * configuration class as well as for external calls to this configuration's
-   * {@code @Bean} methods, e.g. from another configuration class. If this is not needed
-   * since each of this particular configuration's {@code @Bean} methods is
-   * self-contained and designed as a plain factory method for container use, switch
-   * this flag to {@code false} in order to avoid CGLIB subclass processing.
-   * <p>
-   * Turning off bean method interception effectively processes {@code @Bean} methods
-   * individually like when declared on non-{@code @Configuration} classes, a.k.a.
-   * "@Bean Lite Mode" (see {@link Bean @Bean's javadoc}). It is therefore behaviorally
-   * equivalent to removing the {@code @Configuration} stereotype.
-   * @since 2.2
-   * @return whether to proxy {@code @Bean} methods
-   */
+  
   @AliasFor(annotation = Configuration.class)
   boolean proxyBeanMethods() default true;
 
@@ -183,4 +61,42 @@ public @interface SpringBootApplication {
 | @SpringBootConfiguration | 환경 설정 빈 구성을 자동으로 찾을 수 있게 해준다                      |
 | @EnableAutoConfiguration | @CompnentScan으로 빈이 등록된 이후, 추가적인 빈들을 읽어 등록하는 애노테이션 |
 | @ComponentScan           | 스프링 빈으로 등록될 것임을 알려준다                              |
-| @Filter                        |                                                   |
+| @Filter                  | 스프링 빈으로 등록할 것과 등록하지 않을 것을 구분해준다                   |
+
+
+<br>
+
+# 메소드
+* exclude : 특정 클래스를 자동 설정에서 제외함
+* excludeName : 클래스의 이름으로 자동 설정에서 제외함
+* scanBasePackages : 컴포넌트 스캔(빈 탐색)을 진행할 베이스 패키지 설정
+* scanBaseClasses : 컴포넌트 스캔을 진행할 베이스 클래스를 설정
+* nameGenerator : 빈 이름 생성을 담당할 클래스를 설정함
+* proxyBeanMethods : @Bean 메소드를 프록시 방식으로 처리하도록 설정한다
+
+## proxyBeanMethods
+```java
+@Configuration(proxyBeanMethods = false)
+public class Config {
+
+  @Bean
+  public SampleBean sampleBean() {
+    return new SampleBean();
+  }
+
+  @Bean
+  public BeanA beanA() {
+    return new BeanA(sampleBean());
+  }
+
+  @Bean
+  public BeanB beanB() {
+    return new BeanB(sampleBean());
+  }
+}
+```
+위의 코드로 빈을 생성하면 원래는 하나만 생성되어야 하는 `SampleBean`이 두 개가 만들어진다.
+그 이유는 `proxyBeanMethods = false`로 설정되었기 때문이다. 이는 Config 클래스에 프록시가 적용되지 않았기 때문이다.
+하지만 이 상황은 보통 개발자들이 원하는 상황이 아니기 때문에 스프링은 기본값으로 `proxyBeanMethods = true`를 기본값으로 가지고 있으며 바이트 조작 라이브러리인 CGLib을 통해 프록시 패턴을 적용한다.
+그렇게 해당 `@Bean` 메소드가 호풀되어 이미 빈이 생성되었으면 존재하는 빈을 찾아서 반환하여 싱글톤을 유지하도록 하는 것이다.
+

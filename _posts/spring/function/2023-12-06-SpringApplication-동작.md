@@ -1,3 +1,11 @@
+---
+title: SpringApplication 동작
+date: 2023-12-06 20:00:00 +0800
+categories: [Spring, Function]
+tags: [spring, code]
+render_with_liquid: false
+---
+
 Toby-Spring 강의를 듣고 나서 SpringApplication이 어떻게 동작하는지 한 번 정리해자.
 먼저 전체적인 코드는 위와 같다.
 

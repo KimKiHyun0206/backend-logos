@@ -226,6 +226,12 @@ Spring은 다운 받은 모든 jar 파일 안에서 META-INF 하위에 `spring.f
 이 단계에서는 캐싱된 내역이 없어서 파일로부터 내용을 읽어왔지만 다음 단계에서부터는 이미 읽어와서 캐시에 저장해두었기 때문에 값을 불러오지 않는다.
 그리고 불러온 클래스 목록들은 `createSpringFactoriesInstances`를 통해 객체로 생성되어 반환된다.
 
+> #### SpringApplication 에서는 두 가지 부분에서 캐싱이 적용된다
+> - BootstrapRegistryInitializer를 불러오고 셋 해주는 과정
+>   - 연속적인 File I/O로 인한 성능 문제를 방지하기 위해 캐싱을 사용한다
+> - @EnableAutoConfiguration 에서 `spring.factories`를 불러오는 작업
+>   - 이때 디스크에서 값을 읽어오기 때문에 작업이 늦기 때문에 캐싱을 사용한다
+
 <br>
 
 ### ApplicationContextInitializer를 찾아서 셋 해준다

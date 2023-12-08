@@ -4,7 +4,6 @@ date: 2023-12-06 20:10:00 +0800
 categories: [Java, Concept]
 tags: [java, servlet]
 render_with_liquid: false
-mermaid: true
 ---
 
 > 서블릿을 관리해주는 컨테이너

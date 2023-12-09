@@ -58,7 +58,7 @@ public class SpringApplication {
 
 SpringApplication의 run 메소드는 위의 세 종류가 있다. 하나씩 자세히 보도록 하자.
 
-<br?
+<br>
 
 ```java
 public class SpringApplication {
@@ -143,7 +143,7 @@ public class SpringApplication {
 
 <br>
 
-## 1. 실행 시간 측정 시작
+# 1. 실행 시간 측정 시작
 
 ```
 long startTime = System.nanoTime();
@@ -181,7 +181,7 @@ stopWatch.start();
 
 <br>
 
-## 2. BootStrapContext 생성
+# 2. BootStrapContext 생성
 
 > 애플리케이션 컨텍스트가 준비될 때까지 환경 변수들을 관리하는 스프링의 Environment 객체를 후처리하기 위한 임시 컨텍스트
 

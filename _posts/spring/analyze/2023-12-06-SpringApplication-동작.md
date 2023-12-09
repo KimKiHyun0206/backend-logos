@@ -1,8 +1,8 @@
 ---
 title: SpringApplication 동작
 date: 2023-12-06 20:00:00 +0800
-categories: [Spring, Function]
-tags: [spring, code]
+categories: [Spring, Analyze]
+tags: [spring, code, analyze]
 render_with_liquid: false
 ---
 

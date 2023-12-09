@@ -1,8 +1,8 @@
 ---
 title: SpringApplication 생성과 초기화
 date: 2023-12-04 20:00:00 +0800
-categories: [Spring, Function]
-tags: [spring, code]
+categories: [Spring, Analyze]
+tags: [spring, code, analyze]
 render_with_liquid: false
 ---
 
